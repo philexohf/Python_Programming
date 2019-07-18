@@ -1,5 +1,5 @@
 from matplotlib import pyplot as plt
-
+import numpy as np
 
 plt.rcParams['font.sans-serif']=['SimHei'] #用来正常显示中文标签
 labels = ['油脂类', '奶类和豆类', '鱼、禽、肉、蛋类', '蔬菜和水果类','谷类']
@@ -14,9 +14,11 @@ plt.title('扇形统计图')
 # 绘制条形统计图
 plt.subplot(2, 2, 2)
 plt.bar(labels, ratio, color='pink', edgecolor='black', width=0.4)
-plt.grid(color='r', linestyle='-.', linewidth=1, alpha=0.3)
+plt.grid(color='b', linestyle='-', linewidth=1, alpha=0.4)
 for x, y in zip(labels, ratio):
     plt.text(x, y, '%.2f%%'%(100*y), ha='center')
+plt.xticks(labels, color='k',rotation=0)
+plt.yticks(np.arange(0, 0.5, step=0.05))
 plt.title('条形统计图')
 # 绘制折线统计图
 plt.subplot(2, 2, 3)
@@ -29,6 +31,8 @@ plt.subplot(2, 2, 4)
 plt.plot(labels, ratio, 'o', color='r')
 for x, y in zip(labels, ratio):
     plt.text(x, y, '%.2f%%'%(100*y), ha='center',  va='bottom')
+plt.xticks(labels, color='k',rotation=60)
+plt.yticks(np.arange(0, 0.5, step=0.05))
 plt.title('散点图')
 
 plt.show()

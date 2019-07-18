@@ -9,7 +9,8 @@ plt.figure()
 # 绘制扇形统计图
 plt.subplot(2, 2, 1)
 colors = ['y', 'w', 'dodgerblue', 'darkorange', 'lightskyblue']  #自定义颜色列表
-plt.pie(ratio, labels=labels, autopct='%.1f%%', counterclock=False, startangle=-75, colors=colors)
+plt.pie(ratio, labels=labels, autopct='%.1f%%', counterclock=False, startangle=-75, 
+        colors=colors, wedgeprops={'linewidth': 1, 'edgecolor': "black"})
 plt.title('扇形统计图')
 # 绘制条形统计图
 plt.subplot(2, 2, 2)
